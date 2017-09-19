@@ -23,7 +23,7 @@ class getallposts
 				'posts_per_page' => -1
             ));
             foreach( $posts as $post ){
-            	$data[] = array( get_permalink( $post ), esc_html( $post->post_title ) );
+            	$data[] = array( iconv('utf-8', 'windows-1251', get_permalink( $post )), iconv('utf-8', 'windows-1251', esc_html( $post->post_title )));
             }
             $this->array_to_csv_download( $data );
     		exit;
